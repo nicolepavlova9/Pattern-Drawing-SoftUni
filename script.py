@@ -9,13 +9,17 @@ def ui_controller():
     user_choice_input = int(input('Choose your option: '))
     if user_choice_input == 7:
         exit()
+    if user_choice_input < 1 or user_choice_input > 7:
+        is_choice_valid = False
+        while is_choice_valid is False:
+            user_choice_input = int(input('Please make a valid choice: '))
+            if 1 < user_choice_input < 7:
+                is_choice_valid = True
     user_size_input = int(input('Choose your size: '))
     return user_choice_input, user_size_input
 
 
 pattern_choice, user_size = ui_controller()
-print("Pattern choice:", pattern_choice)
-print("Size:", user_size)
 
 
 def pattern_solver(choice, size):
