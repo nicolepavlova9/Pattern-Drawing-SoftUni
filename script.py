@@ -16,6 +16,12 @@ def ui_controller():
             if 1 <= user_choice_input <= 7:
                 is_choice_valid = True
     user_size_input = int(input('Choose your size: '))
+    if user_size_input < 1:
+        is_size_valid = False
+        while not is_size_valid:
+            user_size_input = int(input('Please enter a valid size: '))
+            if user_size_input >= 1:
+                is_size_valid = True
     return user_choice_input, user_size_input
 
 
