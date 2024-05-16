@@ -1,5 +1,3 @@
-# TODO - UI
-
 def ui_controller():
     print('1. Right-angled Triangle')
     print('2. Square with Hollow Center')
@@ -16,3 +14,23 @@ def ui_controller():
 pattern_choice, size = ui_controller()
 print("Pattern choice:", pattern_choice)
 print("Size:", size)
+
+
+def pattern_solver(choice, usr_size):
+    while True:
+        match choice:
+            case 1:
+                for i in range(1, usr_size + 1):
+                    print('*' * i)
+            case 2:
+                pass
+            case 3:
+                pass
+            case 4:
+                pass
+            case 5:
+                pass
+        break
+
+
+pattern_solver(pattern_choice, size)
