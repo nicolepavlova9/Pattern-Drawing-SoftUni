@@ -23,6 +23,8 @@ pattern_choice, user_size = ui_controller()
 
 
 def pattern_solver(choice, size):
+    print('-------------------------')
+    print()
     while True:
         match choice:
             case 1:
@@ -54,7 +56,8 @@ def pattern_solver(choice, size):
                 for i in range(1, size + 1):
                     print(" " * (size - i), end="")
                     print("*" * (2 * i - 1))
-
+        print()
+        print('-------------------------')
         break
 
 
