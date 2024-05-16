@@ -31,13 +31,11 @@ def solver(choice, usr_size):
                             print(" ", end="")
                     print()
             case 3:
-                for i in range(1, usr_size + 1):
-                    print(" " * (usr_size - i), end="")
-                    print("*" * (2 * i - 1))
+                for i in range(1, usr_size + 1, 2):
+                    print(" " * ((usr_size - i) // 2) + "*" * i + " " * ((usr_size - i) // 2))
+                for i in range(usr_size - 2, 0, -2):
+                    print(" " * ((usr_size - i) // 2) + "*" * i + " " * ((usr_size - i) // 2))
 
-                for i in range(usr_size - 1, 0, -1):
-                    print(" " * (usr_size - i), end="")
-                    print("*" * (2 * i - 1))
             case 4:
                 pass
             case 5:
