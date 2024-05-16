@@ -1,3 +1,4 @@
+
 def ui_controller():
     print('1. Right-angled Triangle')
     print('2. Square with Hollow Center')
@@ -16,14 +17,20 @@ print("Pattern choice:", pattern_choice)
 print("Size:", size)
 
 
-def pattern_solver(choice, usr_size):
+def solver(choice, usr_size):
     while True:
         match choice:
             case 1:
                 for i in range(1, usr_size + 1):
                     print('*' * i)
             case 2:
-                pass
+                for i in range(usr_size):
+                    for j in range(usr_size):
+                        if i == 0 or i == usr_size - 1 or j == 0 or j == usr_size - 1:
+                            print("*", end="")
+                        else:
+                            print(" ", end="")
+                    print()
             case 3:
                 pass
             case 4:
@@ -33,4 +40,4 @@ def pattern_solver(choice, usr_size):
         break
 
 
-pattern_solver(pattern_choice, size)
+solver(pattern_choice, size)
