@@ -5,7 +5,7 @@ def ui_controller():
     print('4. Left-angled Triangle')
     print('5. Hollow Square')
     print('6. Pyramid')
-    print('7. Exit')
+    print('7. Cancel')
     user_choice_input = int(input('Choose your option: '))
     if user_choice_input == 7:
         exit()
@@ -31,40 +31,38 @@ pattern_choice, user_size = ui_controller()
 def pattern_solver(choice, size):
     print('-------------------------')
     print()
-    while True:
-        match choice:
-            case 1:
-                for i in range(1, size + 1):
-                    print('*' * i)
-            case 2:
-                for i in range(size):
-                    for j in range(size):
-                        if i == 0 or i == size - 1 or j == 0 or j == size - 1:
-                            print("*", end="")
-                        else:
-                            print(" ", end="")
-                    print()
-            case 3:
-                for i in range(1, size + 1, 2):
-                    print(" " * ((size - i) // 2) + "*" * i + " " * ((size - i) // 2))
-                for i in range(size - 2, 0, -2):
-                    print(" " * ((size - i) // 2) + "*" * i + " " * ((size - i) // 2))
-            case 4:
-                for i in range(size, 0, -1):
-                    print('*' * i)
-            case 5:
-                for i in range(size):
-                    if i == 0 or i == size - 1:
-                        print("*" * size)
+    match choice:
+        case 1:
+            for i in range(1, size + 1):
+                print('*' * i)
+        case 2:
+            for i in range(size):
+                for j in range(size):
+                    if i == 0 or i == size - 1 or j == 0 or j == size - 1:
+                        print("*", end="")
                     else:
-                        print("*" + " " * (size - 2) + "*")
-            case 6:
-                for i in range(1, size + 1):
-                    print(" " * (size - i), end="")
-                    print("*" * (2 * i - 1))
-        print()
-        print('-------------------------')
-        break
+                        print(" ", end="")
+                print()
+        case 3:
+            for i in range(1, size + 1, 2):
+                print(" " * ((size - i) // 2) + "*" * i + " " * ((size - i) // 2))
+            for i in range(size - 2, 0, -2):
+                print(" " * ((size - i) // 2) + "*" * i + " " * ((size - i) // 2))
+        case 4:
+            for i in range(size, 0, -1):
+                print('*' * i)
+        case 5:
+            for i in range(size):
+                if i == 0 or i == size - 1:
+                    print("*" * size)
+                else:
+                    print("*" + " " * (size - 2) + "*")
+        case 6:
+            for i in range(1, size + 1):
+                print(" " * (size - i), end="")
+                print("*" * (2 * i - 1))
+    print()
+    print('-------------------------')
 
 
 pattern_solver(pattern_choice, user_size)
