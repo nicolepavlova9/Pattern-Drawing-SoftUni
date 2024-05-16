@@ -1,4 +1,3 @@
-
 def ui_controller():
     print('1. Right-angled Triangle')
     print('2. Square with Hollow Center')
@@ -32,7 +31,13 @@ def solver(choice, usr_size):
                             print(" ", end="")
                     print()
             case 3:
-                pass
+                for i in range(1, usr_size + 1):
+                    print(" " * (usr_size - i), end="")
+                    print("*" * (2 * i - 1))
+
+                for i in range(usr_size - 1, 0, -1):
+                    print(" " * (usr_size - i), end="")
+                    print("*" * (2 * i - 1))
             case 4:
                 pass
             case 5:
