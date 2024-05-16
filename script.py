@@ -19,7 +19,7 @@ def ui_controller():
     if user_size_input < 1:
         is_size_valid = False
         while not is_size_valid:
-            user_size_input = int(input('Please enter a valid size: '))
+            user_size_input = int(input('Size should be positive integer, please try again: '))
             if user_size_input >= 1:
                 is_size_valid = True
     return user_choice_input, user_size_input
