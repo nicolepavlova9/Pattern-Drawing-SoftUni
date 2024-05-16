@@ -13,7 +13,7 @@ def ui_controller():
         is_choice_valid = False
         while is_choice_valid is False:
             user_choice_input = int(input('Please make a valid choice: '))
-            if 1 < user_choice_input < 7:
+            if 1 <= user_choice_input <= 7:
                 is_choice_valid = True
     user_size_input = int(input('Choose your size: '))
     return user_choice_input, user_size_input
@@ -54,7 +54,8 @@ def pattern_solver(choice, size):
                 for i in range(1, size + 1):
                     print(" " * (size - i), end="")
                     print("*" * (2 * i - 1))
-        ui_controller()
+
+        break
 
 
 pattern_solver(pattern_choice, user_size)
