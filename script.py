@@ -5,8 +5,8 @@ def ui_controller():
     print('4. Left-angled Triangle')
     print('5. Hollow Square')
     print('6. Pyramid')
-    print('7. Cancel')
-    user_choice_input = int(input('Choose your Option: '))
+    print('7. Exit')
+    user_choice_input = int(input('Choose your option: '))
     if user_choice_input == 7:
         exit()
     user_size_input = int(input('Choose your size: '))
@@ -18,7 +18,7 @@ print("Pattern choice:", pattern_choice)
 print("Size:", user_size)
 
 
-def solver(choice, size):
+def pattern_solver(choice, size):
     while True:
         match choice:
             case 1:
@@ -53,4 +53,4 @@ def solver(choice, size):
         ui_controller()
 
 
-solver(pattern_choice, user_size)
+pattern_solver(pattern_choice, user_size)
